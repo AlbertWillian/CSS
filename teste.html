@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio de HTML e CSS</title>
+    <style>
+        /* =========================================
+           RESET BÁSICO E ESTRUTURA GERAL (Item 8)
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        main {
+            flex: 1; /* Faz o main crescer e empurrar o rodapé para baixo */
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* =========================================
+           ITEM 1: Título <h1> azul e centralizado
+           ========================================= */
+        h1.titulo-azul {
+            color: blue;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* =========================================
+           ITEM 2: Parágrafos com tamanhos diferentes
+           ========================================= */
+        .texto-pequeno { font-size: 12px; }
+        .texto-medio { font-size: 18px; }
+        .texto-grande { font-size: 24px; font-weight: bold; }
+
+        /* =========================================
+           ITEM 3: Botão verde que fica vermelho no hover
+           ========================================= */
+        .btn-hover {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-hover:hover {
+            background-color: red;
+        }
+
+        /* =========================================
+           ITEM 4: Div 300x200, borda preta, arredondada
+           ========================================= */
+        .caixa-desenho {
+            width: 300px;
+            height: 200px;
+            border: 3px solid black;
+            border-radius: 15px;
+            background-color: #eaeaea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto; /* Centraliza a caixa na tela */
+        }
+
+        /* =========================================
+           ITEM 5: Flexbox centralizando dois botões
+           ========================================= */
+        .secao-flex {
+            display: flex;
+            justify-content: center; /* Centraliza na horizontal */
+            gap: 15px; /* Espaço entre os botões */
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #ddd;
+            border-radius: 8px;
+        }
+
+        .secao-flex button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* =========================================
+           ITEM 6: Cartão com margem, padding, borda e sombra
+           ========================================= */
+        .cartao {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
+            background-color: white;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* =========================================
+           ITEM 7: Classes para destacar trechos de texto
+           ========================================= */
+        .destaque-amarelo {
+            background-color: yellow;
+            padding: 2px 5px;
+        }
+
+        .destaque-vermelho {
+            color: darkred;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* Classes utilitárias para espaçamento */
+        .mb-20 { margin-bottom: 20px; }
+        hr { margin: 30px 0; border: 0; border-top: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+
+    <!-- ITEM 8: Cabeçalho e Menu -->
+    <header>
+        <h2>Meu Site Completo</h2>
+    </header>
+    
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <!-- ITEM 8: Área de Conteúdo Principal -->
+    <main>
+        
+        <!-- ITEM 1: Título Azul -->
+        <h1 class="titulo-azul">Bem-vindo aos Desafios Web</h1>
+        
+        <section class="mb-20">
+            <!-- ITEM 2: Parágrafos de tamanhos diferentes -->
+            <p class="texto-pequeno">Este é o parágrafo 1, configurado com uma fonte pequena (12px).</p>
+            <p class="texto-medio">Este é o parágrafo 2, configurado com uma fonte média (18px).</p>
+            <p class="texto-grande">Este é o parágrafo 3, configurado com uma fonte grande (24px).</p>
+        </section>
+
+        <hr>
+
+        <section class="mb-20" style="text-align: center;">
+            <!-- ITEM 3: Botão Hover -->
+            <p class="mb-20">Passe o mouse no botão abaixo:</p>
+            <button class="btn-hover">Me faça ficar vermelho!</button>
+        </section>
+
+        <hr>
+
+        <section>
+            <!-- ITEM 4: Div com borda e cantos arredondados -->
+            <div class="caixa-desenho">
+                <p>300px x 200px</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ITEM 5: Flexbox para centralizar botões -->
+        <section class="secao-flex">
+            <button>Botão Esquerdo</button>
+            <button>Botão Direito</button>
+        </section>
+
+        <hr>
+
+        <section>
+            <!-- ITEM 6: Componente de Cartão (Card) -->
+            <div class="cartao">
+                <img src="https://via.placeholder.com/100" alt="Exemplo" style="border-radius: 50%; margin-bottom: 10px;">
+                <h3>Perfil de Usuário</h3>
+                <p>Este é um cartão completo utilizando borda, padding, margin e box-shadow.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+            <!-- ITEM 7: Destacar trechos em um artigo -->
+            <article>
+                <h3>Artigo Importante</h3>
+                <p>
+                    Aprender HTML e CSS é fundamental para o <span class="destaque-amarelo">desenvolvimento web frontend</span>. 
+                    Com essas tecnologias, você pode criar desde páginas simples até sistemas complexos. 
+                    Lembre-se sempre de <span class="destaque-vermelho">manter seu código organizado</span> para facilitar a manutenção no futuro!
+                </p>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- ITEM 8: Rodapé -->
+    <footer>
+        <p>&copy; 2026 - Desenvolvido para resolução de exercícios HTML e CSS.</p>
+    </footer>
+
+</body>
+</html>
